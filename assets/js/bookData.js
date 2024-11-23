@@ -1,4 +1,26 @@
-const bookData = [
+/* This entire file is simply a function that returns the bookData object. This is how we can access all of the information inside.
+   Simply calling the function getBooks() will return a value of the contained object.
+
+   Every object in this array has the following attributes, written in the lower case:
+   - author: the name of the person who originally wrote the book
+   - country: the location of the book's origin or first publication, depending on when it was created.
+   - imageLink: can be used as an image's src attribute to display the book cover.
+   - language: the language the book was orignally written in.
+   - link: a link to the wikipedia page for the book.
+   - pages: the number of pages in the book.
+   - title: the title of the book.
+   - year: the year the book was published or originated.
+
+   I intend to add a description attribute with a paragraph telling the user what it is about.
+
+   It is only intended to be added once into localStorage, after which point we can make whatever changes we want.
+
+   Let me know if you have any issues!
+
+ */
+
+function getBooks() { 
+  const bookData = [
     {
       "author": "Chinua Achebe",
       "country": "Nigeria",
@@ -312,7 +334,7 @@ const bookData = [
     {
       "author": "William Faulkner",
       "country": "United States",
-      "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388474680i/373755.jpg",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1433089995i/10975.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/The_Sound_and_the_Fury\n",
       "pages": 326,
@@ -672,7 +694,7 @@ const bookData = [
     {
       "author": "Robert Musil",
       "country": "Austria",
-      "imageLink": "",
+      "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1647816500i/527756.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/The_Man_Without_Qualities\n",
       "pages": 365,
@@ -1000,3 +1022,6 @@ const bookData = [
       "year": 1951
     }
   ]
+
+  return bookData;
+}
