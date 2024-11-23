@@ -1,5 +1,5 @@
-// Pulls the books objects from bookData.js using the function call.
-booksData = getBooks();
+// Imports the entire array from bookData.js
+import {bookData} from './bookData.js';
 
 /* 
 Checks for existing data in localStorage. If it finds that the bookdata object already exists there, 
@@ -16,7 +16,7 @@ function checkForData() {
     const storedBooks = JSON.parse(localStorage.getItem('bookData'));
      
     if (storedBooks !== null) {
-        for (i=0; i<storedBooks.length; i++) {
+        for (let i=0; i<storedBooks.length; i++) {
             books.unshift(storedBooks[i]);
             console.log()
         }
@@ -26,10 +26,12 @@ function checkForData() {
         console.log("No localStorage detected. Adding bookData.");
         console.log("Check 'Application' under 'Dev Tools'");
         console.log("");
-        for (j=0; j<booksData.length; j++) {
+        for (let j=0; j<booksData.length; j++) {
             console.log(booksData[j].title);
         }
     }
 }
 
-checkForData(booksData);
+for (let k=0; k < bookData.length; k++){
+    console.log(bookData[k].title);
+}

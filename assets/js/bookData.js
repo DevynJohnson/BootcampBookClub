@@ -1,5 +1,5 @@
-/* This entire file is simply a function that returns the bookData object. This is how we can access all of the information inside.
-   Simply calling the function getBooks() will return a value of the contained object.
+/* This entire file is simply exports the bookData object. This is how we can access all of the information inside.
+  By using "import {bookData} from './bookData.js';" in the script.js file, we pull this entire array of objects over.
 
    Every object in this array has the following attributes, written in the lower case:
    - author: the name of the person who originally wrote the book
@@ -19,8 +19,8 @@
 
  */
 
-function getBooks() { 
-  const bookData = [
+//function getBooks() { 
+  export const bookData = [
     {
       "author": "Chinua Achebe",
       "country": "Nigeria",
@@ -1022,6 +1022,4 @@ function getBooks() {
       "year": 1951
     }
   ]
-
-  return bookData;
-}
+  
