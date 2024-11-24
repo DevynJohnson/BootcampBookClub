@@ -34,9 +34,11 @@ function checkForData() {
 
 for (let k=0; k < bookData.length; k++){
     console.log(bookData[k].title);
+
 }//HTML for register and login forms
 
 /* <div class="d-flex justify-content-evenly align-items-center m-5">
+
 
 <div class="card border-primary text-center">
     <h3>New to the site? Register here!</h3>
@@ -79,6 +81,7 @@ for (let k=0; k < bookData.length; k++){
     <div id="loginFailed" class="alert alert-danger" role="alert" style="display: none;"></div>
 </div>
 </div> */
+
 
 const registerForm = document.getElementById('register-form'); // Set the form element to a variable
 registerForm.addEventListener('submit', (event) => {
