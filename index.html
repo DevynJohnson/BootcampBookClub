@@ -26,32 +26,36 @@
                     <div class="modal-body"> 
                         <form id="bookForm"> 
                             <div class="mb-3"> 
-                                <label for="bookTitle" class="form-label">Title</label> 
-                                <input type="text" class="form-control" id="bookTitle" required> 
+                                <label for="newBookTitle" class="form-label">Title</label> 
+                                <input type="text" class="form-control" id="newBookTitle" required> 
                             </div> 
                             <div class="mb-3"> 
-                                <label for="bookAuthor" class="form-label">Author</label> 
-                                <input type="text" class="form-control" id="bookAuthor" required> 
+                                <label for="newBookAuthor" class="form-label">Author</label> 
+                                <input type="text" class="form-control" id="newBookAuthor" required> 
                             </div> 
                             <div class="mb-3"> 
-                                <label for="bookCountry" class="form-label">Country of Origin</label> 
-                                <input type="text" class="form-control" id="bookCountry" required> 
+                                <label for="newBookCountry" class="form-label">Country of Origin</label> 
+                                <input type="text" class="form-control" id="newBookCountry" required> 
+                            </div> 
+                            <div>
+                                <label for="newBookLanguage" class="form-label">Language</label>
+                                <input type="text" class="form-control" id="newBookLanguage" required>
+                            </div>
+                            <div class="mb-3"> 
+                                <label for="newBookYear" class="form-label">Year of Publication</label> 
+                                <input type="number" class="form-control" id="newBookYear" required> 
                             </div> 
                             <div class="mb-3"> 
-                                <label for="bookYear" class="form-label">Year of Publication</label> 
-                                <input type="number" class="form-control" id="bookYear" required> 
+                                <label for="newBookImage" class="form-label">Image URL</label> 
+                                <input type="url" class="form-control" id="newBookImage" required> 
                             </div> 
                             <div class="mb-3"> 
-                                <label for="bookImage" class="form-label">Image URL</label> 
-                                <input type="url" class="form-control" id="bookImage"> 
+                                <label for="newBookLink" class="form-label">Link</label> 
+                                <input type="url" class="form-control" id="newBookLink" required> 
                             </div> 
                             <div class="mb-3"> 
-                                <label for="bookLink" class="form-label">Link</label> 
-                                <input type="url" class="form-control" id="bookLink"> 
-                            </div> 
-                            <div class="mb-3"> 
-                                <label for="bookPages" class="form-label">Number of Pages</label> 
-                                <input type="number" class="form-control" id="bookPages" required> 
+                                <label for="newBookPages" class="form-label">Number of Pages</label> 
+                                <input type="number" class="form-control" id="newBookPages" required> 
                             </div> 
                             <button type="submit" class="btn btn-primary">Save</button> 
                         </form> 
