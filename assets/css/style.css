@@ -1,0 +1,19 @@
+.book-container {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.book-scroll {
+    transition: transform 0.3s ease;
+}
+
+.book-img {
+    width: 300px;
+    margin-right: 10px;
+    border-radius: 0.25rem; 
+}
+
+.arrow {
+    z-index: 1;
+}
