@@ -11,7 +11,21 @@
 </head>
 
 <body>
-    <div class="container my-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./index.html">Bootcamp Book Club</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginFormModal">Login</a>
+            <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Sign Up</a>
+            <a class="nav-item nav-link" href="#">Currently Reading</a>
+            <a class="nav-item nav-link" href="#">To Be Read</a>
+            <a class="nav-item nav-link" href="#completedBooks">Completed Books</a>
+            <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#bookFormModal">Add A Book</a>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container my-5" id="completedBooks">
         <h2 class="text-center mb-4">Completed Books</h2>
         <div class="book-container position-relative mb-3">
             <div id="left-arrow" class="arrow position-absolute start-0 top-50 translate-middle-y" style="font-size: 2rem; cursor: pointer;">&lt;</div>
