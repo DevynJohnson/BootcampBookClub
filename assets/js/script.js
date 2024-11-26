@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let books = [
     "book1.jpg", "book2.jpg", "book3.jpg", "book4.jpg", "book5.jpg"
 ];
@@ -36,7 +35,6 @@ document.getElementById('right-arrow').addEventListener('click', () => scroll('r
 
 // Load books when the script runs
 loadBooks();
-=======
 // Imports the entire array from bookData.js
 import {bookData} from './bookData.js';
 
@@ -220,4 +218,3 @@ const bookForm = document.getElementById('bookForm');
 
 
 
->>>>>>> 49de3c6a3741a9efcb24725336bb79c105231414
