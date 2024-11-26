@@ -82,7 +82,7 @@ for (let k=0; k < bookData.length; k++){
 </div>
 </div> */
 
-
+// Registration form code
 const registerForm = document.getElementById('register-form'); // Set the form element to a variable
 registerForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent page reset on form submission
@@ -113,8 +113,7 @@ registerForm.addEventListener('submit', (event) => {
     registeredSuccessfully.style.display = 'block';
 });
 
-
-
+// Login form code
 const loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent page reset on form submission
@@ -140,7 +139,45 @@ loginForm.addEventListener('submit', (event) => {
     }
 });
 
+// Add book form code
+const bookForm = document.getElementById('bookForm');
+  bookForm.addEventListener('submit', (event) => {
 
+    event.preventDefault();
+
+    const newBookAuthor = document.getElementById('newBookAuthor').value;
+    const newBookCountry = document.getElementById('newBookCountry').value;
+    const newBookImage = document.getElementById('newBookImage').value;
+    const newBookLanguage = document.getElementById('newBookLanguage').value;
+    const newBookLink = document.getElementById('newBookLink').value;
+    const newBookPages = document.getElementById('newBookPages').value;
+    const newBookTitle = document.getElementById('newBookTitle').value;
+    const newBookYear = document.getElementById('newBookYear').value;
+
+    const newBookData = {
+        author: newBookAuthor,
+        country: newBookCountry,
+        image: newBookImage,
+        language: newBookLanguage,
+        link: newBookLink,
+        pages: newBookPages,
+        title: newBookTitle,
+        year: newBookYear
+    };
+
+    // Let's confirm that we have the data.
+    console.log(newBookData);
+    // Retrieve existing user data array from local storage or create a new one.
+    let userAddedBooks = JSON.parse(localStorage.getItem('userAddedBooks')) || [];
+    // Add this glorious new data to the array.
+    userAddedBooks.push(newBookData);
+    // test that the array is now populated.
+    console.log(userAddedBooks[0].newBookTitle);
+    // Store this bad boy in local storage
+    localStorage.setItem('userAddedBooks', JSON.stringify(userAddedBooks));
+    // Empty the form. It looks nicer
+    bookForm.reset(); 
+  });
 
 
 
