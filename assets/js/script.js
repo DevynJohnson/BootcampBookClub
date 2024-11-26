@@ -72,52 +72,7 @@ function checkForData() {
 for (let k=0; k < bookData.length; k++){
     console.log(bookData[k].title);
 
-}//HTML for register and login forms
-
-/* <div class="d-flex justify-content-evenly align-items-center m-5">
-
-
-<div class="card border-primary text-center">
-    <h3>New to the site? Register here!</h3>
-    <form id="register-form" class="col-auto">
-        <div class="input-group mb-2">
-            <span class="input-group-text" for="newUsername" id="basic-addon1">Create Username: </span>
-            <input type="text" class="form-control" id="newUsername" placeholder="username" required>
-        </div>
-        <div class="input-group mb-2 mt-2">
-            <span class="input-group-text" for="newPassword" id="basic-addon1">Create Password:</span>
-            <input type="password" class="form-control" id="newPassword" placeholder="password" required>
-        </div>
-        <div class="input-group mb-2 mt-2">
-            <span class="input-group-text" for="newReadingGoal" id="basic-addon1">Set Reading Goal:</span>
-            <input type="text" class="form-control" id="newReadingGoal" placeholder="total books this year"
-                required>
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-    </form>
-</div>
-<div id="registeredSuccessfully" class="alert alert-success" role="alert" style="display: none;">
-</div>
-
-<div class="card border-0 text-center"><h2>OR</h2></div>
-
-<div class="card border-primary text-center">
-    <h3>Welcome back! Login here.</h3>
-    <form id="login-form" class="col-auto">
-        <div class="input-group mt-2">
-            <span class="input-group-text" for="username" id="basic-addon1">Username:</span>
-            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-        </div>
-        <div class="input-group mb-2 mt-2">
-            <span class="input-group-text" for="password" id="basic-addon1">Password:</span>
-            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-    <div id="loginSuccess" class="alert alert-success" role="alert" style="display: none;"></div>
-    <div id="loginFailed" class="alert alert-danger" role="alert" style="display: none;"></div>
-</div>
-</div> */
+}
 
 // Registration form code
 const registerForm = document.getElementById('register-form'); // Set the form element to a variable
@@ -216,5 +171,145 @@ const bookForm = document.getElementById('bookForm');
     bookForm.reset(); 
   });
 
+  
 
+/*
+<div class="container my-5">
+        <h2 class="text-center mb-4">Completed Books</h2>
+        <div class="book-container position-relative mb-3">
+            <div id="left-arrow" class="arrow position-absolute start-0 top-50 translate-middle-y" style="font-size: 2rem; cursor: pointer;">&lt;</div>
+            <div id="book-scroll" class="book-scroll d-flex overflow-hidden">
+                <!-- Book images added here? -->
+            </div>
+            <div id="right-arrow" class="arrow position-absolute end-0 top-50 translate-middle-y" style="font-size: 2rem; cursor: pointer;">&gt;</div>
+        </div>
+    </div>
+
+    <main class="container-fluid p-5">
+
+        <!-- Button to trigger modal --> 
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookFormModal"> Add Book </button> 
+
+        <!-- Modal --> 
+        <div class="modal fade" id="bookFormModal" tabindex="-1" aria-labelledby="bookFormModalLabel" aria-hidden="true"> 
+            <div class="modal-dialog"> 
+                <div class="modal-content"> 
+                    <div class="modal-header"> 
+                        <h5 class="modal-title" id="bookFormModalLabel">Add a New Book</h5> 
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                    </div> 
+                    <div class="modal-body"> 
+                        <form id="bookForm"> 
+                            <div class="mb-3"> 
+                                <label for="newBookTitle" class="form-label">Title</label> 
+                                <input type="text" class="form-control" id="newBookTitle" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookAuthor" class="form-label">Author</label> 
+                                <input type="text" class="form-control" id="newBookAuthor" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookCountry" class="form-label">Country of Origin</label> 
+                                <input type="text" class="form-control" id="newBookCountry" required> 
+                            </div> 
+                            <div>
+                                <label for="newBookLanguage" class="form-label">Language</label>
+                                <input type="text" class="form-control" id="newBookLanguage" required>
+                            </div>
+                            <div class="mb-3"> 
+                                <label for="newBookYear" class="form-label">Year of Publication</label> 
+                                <input type="number" class="form-control" id="newBookYear" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookImage" class="form-label">Image URL</label> 
+                                <input type="url" class="form-control" id="newBookImage" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookLink" class="form-label">Link</label> 
+                                <input type="url" class="form-control" id="newBookLink" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookPages" class="form-label">Number of Pages</label> 
+                                <input type="number" class="form-control" id="newBookPages" required> 
+                            </div> 
+                            <button type="submit" class="btn btn-primary">Save</button> 
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal  (Use this for the project1 registration modal)--> 
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrationFormModal"> Sign Up! </button> 
+
+        <div class="modal fade" id="registrationFormModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true"> 
+            <div class="modal-dialog"> 
+                <div class="modal-content"> 
+                    <div class="modal-header"> 
+                        <h5 class="modal-title" id="registrationFormModalTitle"> Register </h5> 
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                    </div> 
+                    <div class="modal-body"> 
+                        <h3>New to the site? Register here!</h3>
+                        <form id="register-form" class="col-auto">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text" for="newUsername" id="basic-addon1">Create Username: </span>
+                                <input type="text" class="form-control" id="newUsername" placeholder="username" required>
+                            </div>
+                            <div class="input-group mb-2 mt-2">
+                                <span class="input-group-text" for="newPassword" id="basic-addon1">Create Password:</span>
+                                <input type="password" class="form-control" id="newPassword" placeholder="password" required>
+                            </div>
+                            <div class="input-group mb-2 mt-2">
+                                <span class="input-group-text" for="newReadingGoal" id="basic-addon1">Set Reading Goal:</span>
+                                <input type="text" class="form-control" id="newReadingGoal" placeholder="total books this year"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                    <div id="registeredSuccessfully" class="alert alert-success" role="alert" style="display: none;">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Button to trigger login modal --> 
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginFormModal"> Login </button> 
+
+        <!-- Modal --> 
+        <div class="modal fade" id="loginFormModal" tabindex="-1" aria-labelledby="loginFormModalLabel" aria-hidden="true"> 
+            <div class="modal-dialog"> 
+                <div class="modal-content"> 
+                    <div class="modal-header"> 
+                        <h5 class="modal-title" id="bookFormModalLabel">Welcome Back!</h5> 
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                    </div> 
+                    <div class="modal-body"> 
+                        <div class="card border-primary text-center">
+                            <h3>Welcome back! Login here.</h3>
+                            <form id="login-form" class="col-auto">
+                                <div class="input-group mt-2">
+                                    <span class="input-group-text" for="username" id="basic-addon1">Username:</span>
+                                    <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                </div>
+                                <div class="input-group mb-2 mt-2">
+                                    <span class="input-group-text" for="password" id="basic-addon1">Password:</span>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
+                            <div id="loginSuccess" class="alert alert-success" role="alert" style="display: none;"></div>
+                            <div id="loginFailed" class="alert alert-danger" role="alert" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+*/
 
