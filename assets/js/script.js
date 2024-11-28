@@ -225,7 +225,12 @@ document.addEventListener('DOMContentLoaded', () => {
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const query = event.target.querySelector('input[type="search"]').value.toLowerCase();
-        const results = books.filter(book => book.title.toLowerCase().includes(query));
+        // Retrieve user-added books from local storage
+        const userAddedBooks = JSON.parse(localStorage.getItem('userAddedBooks')) || [];
+        
+        // Combine the bookData and userAddedBooks
+        const allBooks = books.concat(userAddedBooks);
+        const results = allBooks.filter(book => book.title.toLowerCase().includes(query));
         displaySearchResults(results);
     });
 
@@ -258,3 +263,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// function for selecting a random book from the list.
+function getRandomBook() {
+    const randBookTitle = document.getElementById('randBookTitle');
+    const randBookAuthor = document.getElementById('randBookAuthor');
+    const randBookDescription = document.getElementById('randBookDescription');
+    const randBookImage = document.getElementById('randBookImage');
+
+    let randomNumber = Math.floor(Math.random() * bookData.length);
+    /*
+    console.log(randomNumber);
+    console.log(bookData[randomNumber].author);
+    console.log(bookData[randomNumber].title);
+    console.log(bookData[randomNumber].year);
+    console.log(bookData[randomNumber].language);
+    console.log(bookData[randomNumber].country);
+    console.log(bookData[randomNumber].link);
+    console.log(bookData[randomNumber].imageLink);
+    */
+    randBookTitle.textContent = bookData[randomNumber].title;
+    randBookAuthor.textContent = bookData[randomNumber].author;
+    randBookDescription.textContent = bookData[randomNumber].description;
+    randBookImage.setAttribute('src', bookData[randomNumber].imageLink);
+
+  }
+
+
+getRandomBook();
