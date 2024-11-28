@@ -225,7 +225,12 @@ document.addEventListener('DOMContentLoaded', () => {
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const query = event.target.querySelector('input[type="search"]').value.toLowerCase();
-        const results = books.filter(book => book.title.toLowerCase().includes(query));
+        // Retrieve user-added books from local storage
+        const userAddedBooks = JSON.parse(localStorage.getItem('userAddedBooks')) || [];
+        
+        // Combine the bookData and userAddedBooks
+        const allBooks = books.concat(userAddedBooks);
+        const results = allBooks.filter(book => book.title.toLowerCase().includes(query));
         displaySearchResults(results);
     });
 
