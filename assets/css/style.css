@@ -23,3 +23,8 @@
     height: 500px;
     border-radius: 15px;
 }
+@media screen and (max-width: 575px) {
+    nav {
+        max-width: 100%;
+    }
+};
