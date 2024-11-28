@@ -216,5 +216,30 @@ const bookForm = document.getElementById('bookForm');
     bookForm.reset(); 
   });
 
+  // function for selecting a random book from the list.
+function getRandomBook() {
+    const randBookTitle = document.getElementById('randBookTitle');
+    const randBookAuthor = document.getElementById('randBookAuthor');
+    const randBookDescription = document.getElementById('randBookDescription');
+    const randBookImage = document.getElementById('randBookImage');
 
+    let randomNumber = Math.floor(Math.random() * bookData.length);
+    
+    console.log(randomNumber);
+    console.log(bookData[randomNumber].author);
+    console.log(bookData[randomNumber].title);
+    console.log(bookData[randomNumber].year);
+    console.log(bookData[randomNumber].language);
+    console.log(bookData[randomNumber].country);
+    console.log(bookData[randomNumber].link);
+    console.log(bookData[randomNumber].imageLink);
+    
+    randBookTitle.textContent = bookData[randomNumber].title;
+    randBookAuthor.textContent = bookData[randomNumber].author;
+    //randBookDescription.textContent = bookData[randomNumber].description;
+    randBookImage.setAttribute('src', bookData[randomNumber].imageLink);
+    
+  }
+
+  getRandomBook();
 

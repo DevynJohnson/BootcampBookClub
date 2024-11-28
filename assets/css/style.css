@@ -17,3 +17,9 @@
 .arrow {
     z-index: 1;
 }
+
+#randBookImage {
+    border: solid 5px;
+    height: 500px;
+    border-radius: 15px;
+}
