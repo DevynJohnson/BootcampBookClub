@@ -216,5 +216,45 @@ const bookForm = document.getElementById('bookForm');
     bookForm.reset(); 
   });
 
+  // Use search bar in nav to search for books by title
+document.addEventListener('DOMContentLoaded', () => {
+    const books = bookData;
+
+    // Handle the search form submission
+    const searchForm = document.getElementById('searchBooks');
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const query = event.target.querySelector('input[type="search"]').value.toLowerCase();
+        const results = books.filter(book => book.title.toLowerCase().includes(query));
+        displaySearchResults(results);
+    });
+
+    // Function to display search results
+    function displaySearchResults(results) {
+        const searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML = '';
+
+        if (results.length === 0) {
+            searchResults.innerHTML = '<p class="text-center">No books found, please check your search and try again or use the Add A Book feature.</p>';
+            return;
+        }
+
+        results.forEach(book => {
+            const bookCard = document.createElement('div');
+            bookCard.classList.add('col-md-4', 'mb-3');
+            bookCard.innerHTML = `
+                <div class="card">
+                    <img src="${book.imageLink}" class="card-img-top" alt="${book.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${book.title}</h5>
+                        <p class="card-text">${book.author}</p>
+                    </div>
+                </div>
+            `;
+            searchResults.appendChild(bookCard);
+        });
+    }
+});
+
 
 
