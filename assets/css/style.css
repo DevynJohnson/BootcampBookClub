@@ -14,15 +14,16 @@
     border-radius: 0.25rem; 
 }
 
-.arrow {
-    z-index: 1;
-}
-
 #randBookImage {
     border: solid 5px;
     height: 500px;
     border-radius: 15px;
 }
+
+.arrow {
+    z-index: 1;
+}
+
 @media screen and (max-width: 575px) {
     nav {
         max-width: 100%;
