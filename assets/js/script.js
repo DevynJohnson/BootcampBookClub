@@ -35,8 +35,12 @@ document.getElementById('right-arrow').addEventListener('click', () => scroll('r
 
 // Load books when the script runs
 loadBooks();
+
+
 // Imports the entire array from bookData.js
 import {bookData} from './bookData.js';
+
+//console.log(bookData);
 
 /* 
 Checks for existing data in localStorage. If it finds that the bookdata object already exists there, 
@@ -49,22 +53,23 @@ Let me know if you have any issues!
 function checkForData() {
 
     let books = [];
-
     const storedBooks = JSON.parse(localStorage.getItem('bookData'));
      
     if (storedBooks !== null) {
         for (let i=0; i<storedBooks.length; i++) {
             books.unshift(storedBooks[i]);
-            console.log()
+            console.log(books[0]); 
+            console.log("CheckForDataSuccess"); 
         }
         console.log("Retrieved data from localStorage");
     } else {
-        localStorage.setItem('bookData', JSON.stringify(booksData));
+        localStorage.setItem('bookData', JSON.stringify(bookData));
         console.log("No localStorage detected. Adding bookData.");
         console.log("Check 'Application' under 'Dev Tools'");
         console.log("");
-        for (let j=0; j<booksData.length; j++) {
-            console.log(booksData[j].title);
+        console.log("CheckForDataSuccess"); 
+        for (let j=0; j<storedBooks.length; j++) {
+            console.log(storedBooks[j].title);
         }
     }
 }
@@ -261,32 +266,137 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-
 // function for selecting a random book from the list.
 function getRandomBook() {
+
+    const storedBooks = JSON.parse(localStorage.getItem('bookData'));
     const randBookTitle = document.getElementById('randBookTitle');
     const randBookAuthor = document.getElementById('randBookAuthor');
     const randBookDescription = document.getElementById('randBookDescription');
     const randBookImage = document.getElementById('randBookImage');
 
-    let randomNumber = Math.floor(Math.random() * bookData.length);
-    /*
-    console.log(randomNumber);
-    console.log(bookData[randomNumber].author);
-    console.log(bookData[randomNumber].title);
-    console.log(bookData[randomNumber].year);
-    console.log(bookData[randomNumber].language);
-    console.log(bookData[randomNumber].country);
-    console.log(bookData[randomNumber].link);
-    console.log(bookData[randomNumber].imageLink);
-    */
-    randBookTitle.textContent = bookData[randomNumber].title;
-    randBookAuthor.textContent = bookData[randomNumber].author;
-    randBookDescription.textContent = bookData[randomNumber].description;
-    randBookImage.setAttribute('src', bookData[randomNumber].imageLink);
+    let randomNumber = Math.floor(Math.random() * storedBooks.length);
 
+    randBookTitle.textContent = storedBooks[randomNumber].title;
+    randBookAuthor.textContent = storedBooks[randomNumber].author;
+    randBookDescription.textContent = storedBooks[randomNumber].description;
+    randBookImage.setAttribute('src', storedBooks[randomNumber].imageLink);
   }
 
+// Creating a list of styles to choose from.
+function setStyles() {
+    const styleList = []
+
+    const style1 = {
+        primary: '#EEEEEE',
+        secondary: '#686D76',
+        tertiary: '#373A40',
+        accent: '#DC5F00'
+    }
+    styleList.push(style1);
+
+    const style2 = {
+        primary: '#F5F7F8',
+        secondary: '#F4CE14',
+        tertiary: '#495E57',
+        accent: '#45474B'
+    }
+    styleList.push(style2);
+
+    const style3 = {
+        primary: '#384B70',
+        secondary: '#507687',
+        tertiary: '#FCFAEE',
+        accent: '#B8001F'
+    }
+    styleList.push(style3);
+
+    const style4 = {
+        primary: '#F3EFE0',
+        secondary: '#434242',
+        tertiary: '#222222',
+        accent: '#22A39F'
+    }
+    styleList.push(style4);
+
+    const style5 = {
+        primary: '#E4E0E1',
+        secondary: '#D6C0B3',
+        tertiary: '#AB886D',
+        accent: '#493628'
+    }
+    styleList.push(style5);
+
+    const style6 = {
+        primary: '#884A39',
+        secondary: '#C38154',
+        tertiary: '#FFC26F',
+        accent: '#F9E0BB'
+    }
+    styleList.push(style6);
+
+    const style7 = {
+        primary: '#43766C',
+        secondary: '#F8FAE5',
+        tertiary: '#B19470',
+        accent: '#76453B'
+    }
+    styleList.push(style7);
+
+    const style8 = {
+        primary: '#000B58',
+        secondary: '#003161',
+        tertiary: '#006A67',
+        accent: '#FFF4B7'
+    }
+    styleList.push(style8);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const colorSelect = document.getElementById('colorSelect');
+
+        // load saved color
+        const savedStyles = JSON.parse(localStorage.getItem('savedStyles'));
+        if (savedStyles) {
+            document.body.style.backgroundColor = savedStyles.primary;
+        }
+
+        colorSelect.addEventListener('change', (event) => {
+            const selectedStyle = event.target.value;
+            document.body.style.backgroundColor = styleList[selectedStyle].primary;
+
+            // save selected color;
+            localStorage.setItem('savedStyles', JSON.stringify(savedStyles[selectedStyle].primary));
+        })
+    });
+}
+
+function getBookGoal() {
+    const totalBookGoal = document.getElementById('bookGoal');
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
+    totalBookGoal.textContent = storedUserData.readingGoal;
+
+    console.log(totalBookGoal.textContent);
+};
+
+function populateBooksLeft() {
+    let booksLeft = document.getElementById('navBarBookCount');
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    let goal = userData.readingGoal;
+    let soFar = 25;
+    let name = userData.username;
+    booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
+}
+
+function currentBook() {
+
+}
+
+function markBookComplete() {
+
+}
 
 getRandomBook();
+checkForData();
+populateBooksLeft();
+getBookGoal();
+setStyles();
