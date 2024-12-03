@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script defer src="./assets/js/script.js" type="module"></script>
     <title>BootCamp Book Club</title>
 </head>
-    <!-- <div class="container my-5" id="completedBooks">
+<!-- <div class="container my-5" id="completedBooks">
         <h2 class="text-center mb-4">Completed Books</h2>
         <div class="book-container position-relative mb-3">
             <div id="left-arrow" class="arrow position-absolute start-0 top-50 translate-middle-y" style="font-size: 2rem; cursor: pointer;">&lt;</div>
@@ -151,11 +154,13 @@
 
 </html>
 <!- -bigHTML Below-->
+
 <body>
     <main>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container fluid">
                 <a class="navbar-brand" href="./index.html">Bootcamp Book Club</a>
+                <h3 class="h4 responsive-text" id="navBarBookCount"></h3>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -171,133 +176,137 @@
                             <input class="form-control mr-sm-1" type="search" placeholder="Search Books By Title" aria-label="Search">
                         </form>
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+
                     </div>
                 </div>
             </div>
         </nav>
 
-          <div class="container mt-5">
+        <div class="container mt-5">
             <div id="searchResults" class="row"></div>
         </div>
 
-        <centerSection class="container-fluid d-flex flex-row flex-wrap">
+        <centerSection class="container-fluid d-flex flex-row flex-wrap" id="centerSection">
    
-            <div class="col-sm-8 p-5 bg-gradient-dark border" >
+            <div class="col-md-12 col-lg-9 p-5 bg-gradient-dark border" >
         
         
-                <upperRegion>
-                    <div class="d-flex flex-row flex-fill flex-wrap justify-content-around" style="background-color: lightgray;">
+                <div class="upperRegion ">
+                    <div class="d-flex flex-row flex-fill flex-wrap justify-content-around border rounded border-dark align-items-center loginCard">
+                        
+                        <imgBox class="justify-content-around col-md-5">
+                            <img src="./assets/images/bookClubLogo.svg" class="img-fluid ">
+                        </imgBox> 
 
-                    <imgBox class="justify-content-around col-md-5">
-                        <img src="./assets/images/bookClubLogo.svg" class="img-fluid">
-                    </imgBox> 
+                        <div class="p-4 flex-wrap col-md-5">
 
-                    <div class="p-4 flex-wrap col-md-5">
+                            <h2 class="card bg-dark">
+                                <div class="card-title">
+                                    <p class="responsive-text m-3 text-center text-white">BootCamp Book Club</p>
+                                </div>
+                            </h2> 
+    
+                            <h3 class="card bg-secondary">
+                                <div class="card-title">
+                                    <p class=" responsive-text text-center text-white">Hello XXXX!</p>
+                                </div>
+                            </h3>
 
-                        <h2 class="card bg-dark">
-                            <div class="card-title">
-                                <p class="m-3 text-center text-white">BootCampBookClub</p>
-                            </div>
-                        </h2> 
- 
-                        <h3 class="card bg-secondary">
-                            <div class="card-title">
-                                <p class="m-2 text-center text-white">Hello XXXX!</p>
-                            </div>
-                        </h3>
+                            <h3 class="card bg-secondary">
+                                <div class="card-title">
+                                    <p class=" responsive-text m-2 text-center text-white">Welcome to the Club!</p>
+                                </div>
+                            </h3>
 
-                        <h3 class="card bg-secondary">
-                            <div class="card-title">
-                                <p class="m-2 text-center text-white">Welcome to the Club!</p>
-                            </div>
-                        </h3>
-
-                        <div class="text-center p-5">
-                            <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#loginFormModal">Logon</button>
-
-                            <div class="modal fade" id="loginFormModal" tabindex="-1" aria-labelledby="loginFormModalLabel" aria-hidden="true"> 
-                                <div class="modal-dialog"> 
-                                    <div class="modal-content"> 
-                                        <div class="modal-header"> 
-                                            <h5 class="modal-title" id="bookFormModalLabel">Welcome Back!</h5> 
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
-                                        </div> 
-                                        <div class="modal-body"> 
-                                            <div class="card border-primary text-center">
-                                                <h3>Welcome back! Login here.</h3>
-                                                <form id="login-form" class="col-auto">
-                                                    <div class="input-group mt-2">
-                                                        <span class="input-group-text" for="username" id="basic-addon1">Username:</span>
-                                                        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                            <div class="text-center p-5">
+                                <div class="animatedButtons">
+                                    <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#loginFormModal">Logon</button>
+                                    <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Sign Up!</button>
+                                </div>
+                                    <div class="modal fade" id="loginFormModal" tabindex="-1" aria-labelledby="loginFormModalLabel" aria-hidden="true"> 
+                                        <div class="modal-dialog"> 
+                                            <div class="modal-content"> 
+                                                <div class="modal-header"> 
+                                                    <h5 class="modal-title" id="bookFormModalLabel">Welcome Back!</h5> 
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                                                </div> 
+                                                <div class="modal-body"> 
+                                                    <div class="card border-primary text-center">
+                                                        <h3>Welcome back! Login here.</h3>
+                                                        <form id="login-form" class="col-auto">
+                                                            <div class="input-group mt-2">
+                                                                <span class="input-group-text" for="username" id="basic-addon1">Username:</span>
+                                                                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                                            </div>
+                                                            <div class="input-group mb-2 mt-2">
+                                                                <span class="input-group-text" for="password" id="basic-addon1">Password:</span>
+                                                                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary">Login</button>
+                                                        </form>
+                                                        <div id="loginSuccess" class="alert alert-success" role="alert" style="display: none;"></div>
+                                                        <div id="loginFailed" class="alert alert-danger" role="alert" style="display: none;"></div>
                                                     </div>
-                                                    <div class="input-group mb-2 mt-2">
-                                                        <span class="input-group-text" for="password" id="basic-addon1">Password:</span>
-                                                        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary">Login</button>
-                                                </form>
-                                                <div id="loginSuccess" class="alert alert-success" role="alert" style="display: none;"></div>
-                                                <div id="loginFailed" class="alert alert-danger" role="alert" style="display: none;"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Sign Up!</button>
+                                    
+                                
 
-                            <div class="modal fade" id="registrationFormModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true"> 
-                                <div class="modal-dialog"> 
-                                    <div class="modal-content"> 
-                                        <div class="modal-header"> 
-                                            <h5 class="modal-title" id="registrationFormModalTitle"> Register </h5> 
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
-                                        </div> 
-                                        <div class="modal-body"> 
-                                            <h3>New to the site? Register here!</h3>
-                                            <form id="register-form" class="col-auto">
-                                                <div class="input-group mb-2">
-                                                    <span class="input-group-text" for="newUsername" id="basic-addon1">Create Username: </span>
-                                                    <input type="text" class="form-control" id="newUsername" placeholder="username" required>
+                                    <div class="modal fade" id="registrationFormModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true"> 
+                                        <div class="modal-dialog"> 
+                                            <div class="modal-content"> 
+                                                <div class="modal-header"> 
+                                                    <h5 class="modal-title" id="registrationFormModalTitle"> Register </h5> 
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                                                </div> 
+                                                <div class="modal-body"> 
+                                                    <h3>New to the site? Register here!</h3>
+                                                    <form id="register-form" class="col-auto">
+                                                        <div class="input-group mb-2">
+                                                            <span class="input-group-text" for="newUsername" id="basic-addon1">Create Username: </span>
+                                                            <input type="text" class="form-control" id="newUsername" placeholder="username" required>
+                                                        </div>
+                                                        <div class="input-group mb-2 mt-2">
+                                                            <span class="input-group-text" for="newPassword" id="basic-addon1">Create Password:</span>
+                                                            <input type="password" class="form-control" id="newPassword" placeholder="password" required>
+                                                        </div>
+                                                        <div class="input-group mb-2 mt-2">
+                                                            <span class="input-group-text" for="newReadingGoal" id="basic-addon1">Set Reading Goal:</span>
+                                                            <input type="text" class="form-control" id="newReadingGoal" placeholder="total books this year"
+                                                                required>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Register</button>
+                                                    </form>
                                                 </div>
-                                                <div class="input-group mb-2 mt-2">
-                                                    <span class="input-group-text" for="newPassword" id="basic-addon1">Create Password:</span>
-                                                    <input type="password" class="form-control" id="newPassword" placeholder="password" required>
+                                                <div id="registeredSuccessfully" class="alert alert-success" role="alert" style="display: none;">
+                                                
                                                 </div>
-                                                <div class="input-group mb-2 mt-2">
-                                                    <span class="input-group-text" for="newReadingGoal" id="basic-addon1">Set Reading Goal:</span>
-                                                    <input type="text" class="form-control" id="newReadingGoal" placeholder="total books this year"
-                                                        required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Register</button>
-                                            </form>
-                                        </div>
-                                        <div id="registeredSuccessfully" class="alert alert-success" role="alert" style="display: none;">
-                                        
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                            
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
                 
                     </div>
-                </upperRegion>
+                </div>
     
        
            
-               <centerRegion>
-                    <div class="d-flex flex-row flex-fill justify-content-around m-5">
+               <section id="centerRegion">
+                    <div class="d-flex flex-row flex-fill justify-content-center m-5">
                         <div class="p-4 flex-wrap col-md-6">
 
                             <h2 class="card bg-dark">
-                                    <div class="card-title">
-                                        <p class="m-2 text-center text-white">Fall Book Selection</p>
-                                    </div>
-                            </h2> 
- <!--ADD RANDOM BOOK SELECTION INFO AND PICTURE HERE-->
-                           <h4 class="card bg-secondary">
+                                <div class="card-title">
+                                    <p class="m-2 text-center text-white">Fall Book Selection</p>
+                                </div>
+                            </h2>
+                            <!--ADD RANDOM BOOK SELECTION INFO AND PICTURE HERE-->
+                            <h4 class="card bg-secondary">
                                 <div class="card-title">
                                     <p class="m-2 text-center text-white" id="randBookTitle"><!--The Lord of the Rings--></p>
                                 </div>
@@ -310,17 +319,18 @@
                             </h4>
 
                            <div class="card bg-secondary">
-                                <div class="card-content text-centered m-3 h5 text-white" id="randBookDescription">
+                                <div class="card-content text-centered m-3 h5 text-white max-vh-75" id="randBookDescription">
                                     <p><!--the adventures of a bunch of proto-humans that due to an evil wizard, are forced to travel the world and convince people that a magic ring they have needs to be destroyed or pawned off to pay for legal fees.--></p>
                                 </div>
                             </div>
-<!--END RANDOM BOOK DISPLAY-->
-                           <div class="text-center p-5">
-                                <button type="button" class="btn btn-outline-success btn-lg mx-auto">Add to List!</button>
+                            <!--END RANDOM BOOK DISPLAY-->
+                            <div class="text-center p-5">
+                                <button type="button" class="btn btn-outline-success btn-lg mx-auto">Add to
+                                    List!</button>
                             </div>
 
                         </div>
-                
+
                         <imgBox class="justify-content-around p-2">
                             <img src="#" id="randBookImage" class="img-fluid">
                         </imgBox>
@@ -328,111 +338,149 @@
                          
                 
             
-                </centerRegion>
+                </section>
 
-                <bottomRegion class="m-5">
+                <section id="bottomRegion" class="m-5">
                     <div class="d-flex m-3"></div>
 
                     <div class="container my-5" id="completedBooks"  style="background-color: lightgray;">
                         <h2 class="text-center mb-4">Completed Books</h2>
                         <div class="book-container position-relative mb-3">
-                            <div id="left-arrow" class="arrow position-absolute start-0 top-50 translate-middle-y" style="font-size: 2rem; cursor: pointer;">&lt;</div>
+                            <div id="left-arrow" class="arrow position-absolute start-0 top-50 translate-middle-y"
+                                style="font-size: 2rem; cursor: pointer;">&lt;</div>
                             <div id="book-scroll" class="book-scroll d-flex overflow-hidden">
                                 <!-- Book images added here? -->
                             </div>
-                            <div id="right-arrow" class="arrow position-absolute end-0 top-50 translate-middle-y" style="font-size: 2rem; cursor: pointer;">&gt;</div>
+                            <div id="right-arrow" class="arrow position-absolute end-0 top-50 translate-middle-y"
+                                style="font-size: 2rem; cursor: pointer;">&gt;</div>
                         </div>
                     </div>
                 
-                </bottomRegion>
+                </section>
 
             </div>
 
-        <aside class="col-sm-4 p-5 border border-dark">
-            <asideTop class="bg-light">
+        <aside class="col-sm-3 px-5 pt-5 border border-dark">
+            <asideTop class="bg-dark">
                 <h4 class="card bg-secondary">
                     <div class="card-title">
                         <p class="m-2 text-center bg-dark text-white">Book Goal:</p>
-                      <h2 class="card bg-secondary text-center p-4">XXXX</h2>
+                      <h2 class="card bg-secondary text-center p-4" id="bookGoal"></h2>
                     </div>
                 </h4>
             
 
             
-                <div class="card-title p-2 mx-auto bg-light">
-                    <h3 class="m-2 text-dark">Currently Reading:</h3>
-                    <img src="./assets/images/the-lord-of-the-rings-book-cover.jpg" class="img-fluid">
+                <div class="card-title bg-dark container" id="currentBook">
+                    <center bs-data-theme="dark" class="bg-dark mx-0 my-0">
+                        <h3 class="text-light">Currently Reading:</h3>
+                        <img id="asideImage" src="./assets/images/the-lord-of-the-rings-book-cover.jpg" class="img-fluid center-block">
+                    </center>
                 </div>
             </asideTop>
 
-            <asideMiddle class="p-2">
-                <h4 class="card">
-                    <div class="card-title">
-                        <p class="m-2 text-center bg-dark text-white">To Be Read:</p>
-                    </div>
-                    <h2 class="card bg-secondary text-center p-4">XXXX</h2>
-                    <div class="text-center p-5">
-                        <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#bookFormModal">Add a New Book!</button>
-                        <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookFormModal"> Add Book </button> -->
-                        <div class="modal fade" id="bookFormModal" tabindex="-1" aria-labelledby="bookFormModalLabel" aria-hidden="true"> 
-                            <div class="modal-dialog"> 
-                                <div class="modal-content"> 
-                                    <div class="modal-header"> 
-                                        <h5 class="modal-title" id="bookFormModalLabel">Add a New Book</h5> 
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
-                                    </div> 
-                                    <div class="modal-body"> 
-                                        <form id="bookForm"> 
-                                            <div class="mb-3"> 
-                                                <label for="newBookTitle" class="form-label">Title</label> 
-                                                <input type="text" class="form-control" id="newBookTitle" required> 
-                                            </div> 
-                                            <div class="mb-3"> 
-                                                <label for="newBookAuthor" class="form-label">Author</label> 
-                                                <input type="text" class="form-control" id="newBookAuthor" required> 
-                                            </div> 
-                                            <div class="mb-3"> 
-                                                <label for="newBookCountry" class="form-label">Country of Origin</label> 
-                                                <input type="text" class="form-control" id="newBookCountry" required> 
-                                            </div> 
-                                            <div>
-                                                <label for="newBookLanguage" class="form-label">Language</label>
-                                                <input type="text" class="form-control" id="newBookLanguage" required>
-                                            </div>
-                                            <div class="mb-3"> 
-                                                <label for="newBookYear" class="form-label">Year of Publication</label> 
-                                                <input type="number" class="form-control" id="newBookYear" required> 
-                                            </div> 
-                                            <div class="mb-3"> 
-                                                <label for="newBookImage" class="form-label">Image URL</label> 
-                                                <input type="url" class="form-control" id="newBookImage" required> 
-                                            </div> 
-                                            <div class="mb-3"> 
-                                                <label for="newBookLink" class="form-label">Link</label> 
-                                                <input type="url" class="form-control" id="newBookLink" required> 
-                                            </div> 
-                                            <div class="mb-3"> 
-                                                <label for="newBookPages" class="form-label">Number of Pages</label> 
-                                                <input type="number" class="form-control" id="newBookPages" required> 
-                                            </div> 
-                                            <button type="submit" class="btn btn-primary">Save</button> 
-                                        </form> 
-                                    </div>
-                                </div>
-                            </div>
+                <asideMiddle class="p-2">
+                    <h4 class="card">
+                        <div class="card-title">
+                            <p class="m-2 text-center bg-dark text-white">To Be Read:</p>
                         </div>
-                    </div>
-                </h4>
+                        <h2 class="card bg-secondary text-center p-4">XXXX</h2>
+                        <div class="text-center p-5">
+                            <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal"
+                                data-bs-target="#bookFormModal">Add a New Book!</button>
+                            <!--adding completedbook button-->
+                            <button type="button" class="btn btn-outline-success btn-lg mx-auto mt-2"
+                                data-bs-toggle="modal" data-bs-target="#completeBookModal"
+                                id="completeBookButton">Complete A Book!</button>
 
-            </asideMiddle>
+                            <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookFormModal"> Add Book </button> -->
+                            <div class="modal fade" id="bookFormModal" tabindex="-1"
+                                aria-labelledby="bookFormModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="bookFormModalLabel">Add a New Book</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="bookForm">
+                                                <div class="mb-3">
+                                                    <label for="newBookTitle" class="form-label">Title</label>
+                                                    <input type="text" class="form-control" id="newBookTitle" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newBookAuthor" class="form-label">Author</label>
+                                                    <input type="text" class="form-control" id="newBookAuthor" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newBookCountry" class="form-label">Country of
+                                                        Origin</label>
+                                                    <input type="text" class="form-control" id="newBookCountry"
+                                                        required>
+                                                </div>
+                                                <div>
+                                                    <label for="newBookLanguage" class="form-label">Language</label>
+                                                    <input type="text" class="form-control" id="newBookLanguage"
+                                                        required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newBookYear" class="form-label">Year of
+                                                        Publication</label>
+                                                    <input type="number" class="form-control" id="newBookYear" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newBookImage" class="form-label">Image URL</label>
+                                                    <input type="url" class="form-control" id="newBookImage" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newBookLink" class="form-label">Link</label>
+                                                    <input type="url" class="form-control" id="newBookLink" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newBookPages" class="form-label">Number of Pages</label>
+                                                    <input type="number" class="form-control" id="newBookPages"
+                                                        required>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </form>
 
-        
-        </aside>
+                    </h4>
+
+                </asideMiddle>
+
+
+            </aside>
 
         </centerSection>
         <footer>
-           
+
         </footer>
+        <div class="modal fade" id="completeBookModal" tabindex="-1" aria-labelledby="completeBookModalLabel"
+            aria-hidden="true" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="completeBookModalLabel">Complete A Book</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="completeForm">
+                            <div class="mb-3">
+                                <label for="bookToComplete" class="form-label">Select Book to Complete</label>
+                                <select class="form-select" id="bookToComplete" required>
+                                    <!-- Options will be dynamically added here -->
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Mark as Completed</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 </body>
+
 </html>
