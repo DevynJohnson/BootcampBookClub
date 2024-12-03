@@ -271,6 +271,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Imports the entire array from bookData.js
 import {bookData} from './bookData.js';
 
+//console.log(bookData);
+
 /* 
 Checks for existing data in localStorage. If it finds that the bookdata object already exists there, 
 it will add it to an array called books that we can then use to do all kinds of fun stuff.
@@ -280,7 +282,32 @@ You should find that when you refresh the page, the data will not be continusous
 Let me know if you have any issues!
 */
 
-//HTML for register and login forms
+    let books = [];
+    const storedBooks = JSON.parse(localStorage.getItem('bookData'));
+     
+    if (storedBooks !== null) {
+        for (let i=0; i<storedBooks.length; i++) {
+            books.unshift(storedBooks[i]);
+            console.log(books[0]); 
+            console.log("CheckForDataSuccess"); 
+        }
+        console.log("Retrieved data from localStorage");
+    } else {
+        localStorage.setItem('bookData', JSON.stringify(bookData));
+        console.log("No localStorage detected. Adding bookData.");
+        console.log("Check 'Application' under 'Dev Tools'");
+        console.log("");
+        console.log("CheckForDataSuccess"); 
+        for (let j=0; j<storedBooks.length; j++) {
+            console.log(storedBooks[j].title);
+        }
+    }
+
+
+for (let k=0; k < bookData.length; k++){
+    console.log(bookData[k].title);
+
+}//HTML for register and login forms
 
 /* <div class="d-flex justify-content-evenly align-items-center m-5">
 
@@ -425,7 +452,178 @@ const bookForm = document.getElementById('bookForm');
   });
 
 
-    
+    // Handle the search form submission
+    const searchForm = document.getElementById('searchBooks');
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const query = event.target.querySelector('input[type="search"]').value.toLowerCase();
+        // Retrieve user-added books from local storage
+        const userAddedBooks = JSON.parse(localStorage.getItem('userAddedBooks')) || [];
+        
+        // Combine the bookData and userAddedBooks
+        const allBooks = books.concat(userAddedBooks);
+        const results = allBooks.filter(book => book.title.toLowerCase().includes(query));
+        displaySearchResults(results);
+    });
+
+    // Function to display search results
+    function displaySearchResults(results) {
+        const searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML = '';
+
+        if (results.length === 0) {
+            searchResults.innerHTML = '<p class="text-center">No books found, please check your search and try again or use the Add A Book feature.</p>';
+            return;
+        }
+
+        results.forEach(book => {
+            const bookCard = document.createElement('div');
+            bookCard.classList.add('col-md-4', 'mb-3');
+            bookCard.innerHTML = `
+                <div class="card">
+                    <img src="${book.imageLink}" class="card-img-top" alt="${book.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${book.title}</h5>
+                        <p class="card-text">${book.author}</p>
+                    </div>
+                </div>
+            `;
+            searchResults.appendChild(bookCard);
+        });
+    }
 
 
+// function for selecting a random book from the list.
+function getRandomBook() {
 
+    const storedBooks = JSON.parse(localStorage.getItem('bookData'));
+    const randBookTitle = document.getElementById('randBookTitle');
+    const randBookAuthor = document.getElementById('randBookAuthor');
+    const randBookDescription = document.getElementById('randBookDescription');
+    const randBookImage = document.getElementById('randBookImage');
+
+    let randomNumber = Math.floor(Math.random() * storedBooks.length);
+
+    randBookTitle.textContent = storedBooks[randomNumber].title;
+    randBookAuthor.textContent = storedBooks[randomNumber].author;
+    randBookDescription.textContent = storedBooks[randomNumber].description;
+    randBookImage.setAttribute('src', storedBooks[randomNumber].imageLink);
+  }
+
+// Creating a list of styles to choose from.
+function setStyles() {
+    const styleList = []
+
+    const style1 = {
+        primary: '#EEEEEE',
+        secondary: '#686D76',
+        tertiary: '#373A40',
+        accent: '#DC5F00'
+    }
+    styleList.push(style1);
+
+    const style2 = {
+        primary: '#F5F7F8',
+        secondary: '#F4CE14',
+        tertiary: '#495E57',
+        accent: '#45474B'
+    }
+    styleList.push(style2);
+
+    const style3 = {
+        primary: '#384B70',
+        secondary: '#507687',
+        tertiary: '#FCFAEE',
+        accent: '#B8001F'
+    }
+    styleList.push(style3);
+
+    const style4 = {
+        primary: '#F3EFE0',
+        secondary: '#434242',
+        tertiary: '#222222',
+        accent: '#22A39F'
+    }
+    styleList.push(style4);
+
+    const style5 = {
+        primary: '#E4E0E1',
+        secondary: '#D6C0B3',
+        tertiary: '#AB886D',
+        accent: '#493628'
+    }
+    styleList.push(style5);
+
+    const style6 = {
+        primary: '#884A39',
+        secondary: '#C38154',
+        tertiary: '#FFC26F',
+        accent: '#F9E0BB'
+    }
+    styleList.push(style6);
+
+    const style7 = {
+        primary: '#43766C',
+        secondary: '#F8FAE5',
+        tertiary: '#B19470',
+        accent: '#76453B'
+    }
+    styleList.push(style7);
+
+    const style8 = {
+        primary: '#000B58',
+        secondary: '#003161',
+        tertiary: '#006A67',
+        accent: '#FFF4B7'
+    }
+    styleList.push(style8);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const colorSelect = document.getElementById('colorSelect');
+
+        // load saved color
+        const savedStyles = JSON.parse(localStorage.getItem('savedStyles'));
+        if (savedStyles) {
+            document.body.style.backgroundColor = savedStyles.primary;
+        }
+
+        colorSelect.addEventListener('change', (event) => {
+            const selectedStyle = event.target.value;
+            document.body.style.backgroundColor = styleList[selectedStyle].primary;
+
+            // save selected color;
+            localStorage.setItem('savedStyles', JSON.stringify(savedStyles[selectedStyle].primary));
+        })
+    });
+}
+
+function getBookGoal() {
+    const totalBookGoal = document.getElementById('bookGoal');
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
+    totalBookGoal.textContent = storedUserData.readingGoal;
+
+    console.log(totalBookGoal.textContent);
+};
+
+function populateBooksLeft() {
+    let booksLeft = document.getElementById('navBarBookCount');
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    let goal = userData.readingGoal;
+    let soFar = 25;
+    let name = userData.username;
+    booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
+}
+
+function currentBook() {
+
+}
+
+function markBookComplete() {
+
+}
+
+getRandomBook();
+checkForData();
+populateBooksLeft();
+getBookGoal();
+setStyles();

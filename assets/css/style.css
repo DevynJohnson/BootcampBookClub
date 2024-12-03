@@ -35,9 +35,19 @@
     opacity: 0.5; /* Marks completed books with lower opacity */
 }
 
+
+#randBookImage {
+    border: solid 5px;
+    height: 650px;
+    width: 500px;
+    border-radius: 15px;
+    z-index:-1;
+    left:33%;   
+}
+
 .arrow {
     user-select: none; /* Prevent text selection on click */
-    z-index: 5; /* Ensure arrows are above the book images */
+    z-index: 1; /* Ensure arrows are above the book images */
     cursor: pointer; /* Indicates clickable */
 }
 
@@ -55,3 +65,73 @@
     max-height: 200px;
     overflow-y: auto;
 }
+
+@media screen and (max-width: 575px) {
+    nav {
+        max-width: 100%;
+    }
+}
+
+#navBarBookCount {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    #navBarBookCount {
+        display: flex;
+    }
+}
+
+@media (max-width: 992px) {
+    aside {
+        display: none;
+    }
+
+    #centerSection {
+        width: 100%;
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 30px;
+}
+
+#animatedButtons {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.loginCard {
+    height: 95vh;
+}
+
+aside {
+    height: 97vh;
+    position: fixed;
+    right: 0;
+}
+
+section {
+    max-height: 80vh;
+}
+
+#asideImage {
+    height: 300px;
+}
+
+#currentBook {
+    margin-left: auto;
+}
+
+/* Media Query for changing text size at breakpoints */
+
+
