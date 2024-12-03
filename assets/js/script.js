@@ -1,4 +1,5 @@
 
+
 document.addEventListener('DOMContentLoaded', (event) => {
     //search form feature moved inside the beginning of the dom for funtionality.
     const books = bookData;
@@ -588,3 +589,4 @@ checkForData();
 populateBooksLeft();
 getBookGoal();
 setStyles();
+
