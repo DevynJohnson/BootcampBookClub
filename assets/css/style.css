@@ -1,19 +1,57 @@
 .book-container {
     width: 100%;
     max-width: 500px;
-    margin: auto;
+    margin: 0 auto;
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+@media (max-width: 768px) {
+    .book-container {
+        max-width: 100%;
+    }
 }
 
 .book-scroll {
     transition: transform 0.3s ease;
+    display: flex; /* Use flexbox for inline arrangement */
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .book-img {
-    width: 300px;
+    width: 100px; 
+    height: 150px; /* Fixed height to maintain aspect ratio */
+    object-fit: cover; /* This ensures the image covers the area without distortion */
     margin-right: 10px;
-    border-radius: 0.25rem; 
+    border: 1px solid #ddd; /* gives each book a border */
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* shadow for depth */
+    cursor: pointer; /* Indicates the image is clickable */
+    transition: opacity 0.3s; /* Add a transition for smooth opacity change */
+}
+
+.book-img.completed {
+    opacity: 0.5; /* Marks completed books with lower opacity */
 }
 
 .arrow {
-    z-index: 1;
+    user-select: none; /* Prevent text selection on click */
+    z-index: 5; /* Ensure arrows are above the book images */
+    cursor: pointer; /* Indicates clickable */
+}
+
+/* Styling for when there are no books */
+#book-scroll:empty::before {
+    content: "No books completed yet!";
+    padding: 20px;
+    display: block;
+    color: #666;
+    text-align: center;
+    width: 100%;
+}
+
+#bookToComplete {
+    max-height: 200px;
+    overflow-y: auto;
 }
