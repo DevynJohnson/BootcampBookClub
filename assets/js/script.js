@@ -148,6 +148,16 @@ registerForm.addEventListener('submit', (event) => {
     const registeredSuccessfully = document.getElementById('registeredSuccessfully');
     registeredSuccessfully.textContent = `Registration complete. Welcome ${newUsername}!`; // Display a success message
     registeredSuccessfully.style.display = 'block';
+
+    // Update the welcome message
+    const welcomeMessageElement = document.getElementById('welcomeMessage');
+    welcomeMessageElement.textContent = `Welcome to the club ${newUsername}! Use the search bar above to look for a book title or add one of your own to manage your reading list!`;
+
+     // Close the modal
+     const registrationModal = bootstrap.Modal.getInstance(document.getElementById('registrationFormModal'));
+     registrationModal.hide();
+
+    displayBookGoal(); // Update user reading goal after registration is completed
 });
 
 // Login form code
@@ -220,6 +230,13 @@ const bookForm = document.getElementById('bookForm');
 document.addEventListener('DOMContentLoaded', () => {
     const books = bookData;
 
+    // Check if user data is found in local storage and update the welcome message
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+        const welcomeMessageElement = document.getElementById('welcomeMessage');
+        welcomeMessageElement.textContent = `Welcome back ${userData.username}! Use the search bar above to look for a book title or add one of your own to manage your reading list!`;
+    }
+
     // Handle the search form submission
     const searchForm = document.getElementById('searchBooks');
     searchForm.addEventListener('submit', (event) => {
@@ -290,3 +307,17 @@ function getRandomBook() {
 
 
 getRandomBook();
+
+// Function to display the user's reading goal
+function displayBookGoal() {
+    const goal = document.getElementById('goal'); // Define goal element as a variable
+    const user = JSON.parse(localStorage.getItem('userData')); // Get the user data from local storage and parse it
+    if (user && user.readingGoal) {
+        goal.textContent = `Your reading goal for this year is ${user.readingGoal} books.`; // Display the user's reading goal if it exists
+    } else {
+        goal.textContent = 'Please register to set a personal reading goal.'; // Display a message if the user has not set a reading goal
+    }
+}
+
+// Call displayBookGoal on page load to show the goal if the user is already logged in
+displayBookGoal();

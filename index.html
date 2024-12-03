@@ -162,9 +162,9 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginFormModal">Login</a>
-                        <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Sign Up</a>
-                        <a class="nav-item nav-link" href="#">Currently Reading</a>
-                        <a class="nav-item nav-link" href="#">To Be Read</a>
+                        <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Register</a>
+                        <a class="nav-item nav-link" href="#currentlyReading">Currently Reading</a>
+                        <a class="nav-item nav-link" href="#toBeRead">To Be Read</a>
                         <a class="nav-item nav-link" href="#completedBooks">Completed Books</a>
                         <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#bookFormModal">Add A Book</a>
                         <form class="form-inline d-flex" id="searchBooks">
@@ -213,7 +213,7 @@
                         </h3> -->
 
                         <div class="text-center p-5">
-                            <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#loginFormModal">Logon</button>
+                            <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#loginFormModal">Login</button>
 
                             <div class="modal fade" id="loginFormModal" tabindex="-1" aria-labelledby="loginFormModalLabel" aria-hidden="true"> 
                                 <div class="modal-dialog"> 
@@ -244,7 +244,7 @@
                                 </div>
                             </div>
                             
-                            <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Sign Up!</button>
+                            <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Register</button>
 
                             <div class="modal fade" id="registrationFormModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true"> 
                                 <div class="modal-dialog"> 
@@ -353,14 +353,14 @@
                 <h4 class="card bg-secondary">
                     <div class="card-title">
                         <p class="m-2 text-center bg-dark text-white">Book Goal:</p>
-                      <h2 class="card bg-secondary text-center p-4">XXXX</h2>
+                      <p class="card bg-secondary text-center text-white p-4" id="goal"></p>
                     </div>
                 </h4>
             
 
             
                 <div class="card-title p-2 mx-auto bg-light">
-                    <h3 class="m-2 text-dark">Currently Reading:</h3>
+                    <h3 class="m-2 text-dark" id="currentlyReading">Currently Reading:</h3>
                     <img src="./assets/images/the-lord-of-the-rings-book-cover.jpg" class="img-fluid">
                 </div>
             </asideTop>
@@ -368,7 +368,7 @@
             <asideMiddle class="p-2">
                 <h4 class="card">
                     <div class="card-title">
-                        <p class="m-2 text-center bg-dark text-white">To Be Read:</p>
+                        <p class="m-2 text-center bg-dark text-white" id="toBeRead">To Be Read:</p>
                     </div>
                     <h2 class="card bg-secondary text-center p-4">XXXX</h2>
                     <div class="text-center p-5">
