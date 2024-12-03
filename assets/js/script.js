@@ -1,11 +1,4 @@
-// const completeModalButton =document.getElementById('completeBookButton');
 
-// completeModalButton.addEventListener('click', () =>{
-// const completeModal = document.getElementById('completeBookModal');
-// completeModal.style.removeProperty('hidden');
-
-
-// })
 document.addEventListener('DOMContentLoaded', (event) => {
     //search form feature moved inside the beginning of the dom for funtionality.
     const books = bookData;
@@ -306,53 +299,7 @@ Let me know if you have any issues!
 
 for (let k=0; k < bookData.length; k++){
     console.log(bookData[k].title);
-
-}//HTML for register and login forms
-
-/* <div class="d-flex justify-content-evenly align-items-center m-5">
-
-
-<div class="card border-primary text-center">
-    <h3>New to the site? Register here!</h3>
-    <form id="register-form" class="col-auto">
-        <div class="input-group mb-2">
-            <span class="input-group-text" for="newUsername" id="basic-addon1">Create Username: </span>
-            <input type="text" class="form-control" id="newUsername" placeholder="username" required>
-        </div>
-        <div class="input-group mb-2 mt-2">
-            <span class="input-group-text" for="newPassword" id="basic-addon1">Create Password:</span>
-            <input type="password" class="form-control" id="newPassword" placeholder="password" required>
-        </div>
-        <div class="input-group mb-2 mt-2">
-            <span class="input-group-text" for="newReadingGoal" id="basic-addon1">Set Reading Goal:</span>
-            <input type="text" class="form-control" id="newReadingGoal" placeholder="total books this year"
-                required>
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-    </form>
-</div>
-<div id="registeredSuccessfully" class="alert alert-success" role="alert" style="display: none;">
-</div>
-
-<div class="card border-0 text-center"><h2>OR</h2></div>
-
-<div class="card border-primary text-center">
-    <h3>Welcome back! Login here.</h3>
-    <form id="login-form" class="col-auto">
-        <div class="input-group mt-2">
-            <span class="input-group-text" for="username" id="basic-addon1">Username:</span>
-            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-        </div>
-        <div class="input-group mb-2 mt-2">
-            <span class="input-group-text" for="password" id="basic-addon1">Password:</span>
-            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-    <div id="loginSuccess" class="alert alert-success" role="alert" style="display: none;"></div>
-    <div id="loginFailed" class="alert alert-danger" role="alert" style="display: none;"></div>
-</div>
-</div> */
+}
 
 // Registration form code
 const registerForm = document.getElementById('register-form'); // Set the form element to a variable
@@ -627,3 +574,4 @@ checkForData();
 populateBooksLeft();
 getBookGoal();
 setStyles();
+
