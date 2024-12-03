@@ -100,7 +100,7 @@
     {
       "author": "Jane Austen",
       "country": "United Kingdom",
-      "description": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work 'her own darling child' and its vivacious heroine, Elizabeth Bennet, 'as delightful a creature as ever appeared in print.' The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen's radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England.",
+      "description": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work 'her own darling child' and its vivacious heroine, Elizabeth Bennet, 'as delightful a creature as ever appeared in print.'",
       "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Pride_and_Prejudice",
@@ -199,7 +199,7 @@
     {
       "author": "Miguel de Cervantes",
       "country": "Spain",
-      "description": "Don Quixote has become so entranced by reading chivalric romances that he determines to become a knight-errant himself. In the company of his faithful squire, Sancho Panza, his exploits blossom in all sorts of wonderful ways. While Quixote's fancy often leads him astray—he tilts at windmills, imagining them to be giants—Sancho acquires cunning and a certain sagacity. Sane madman and wise fool, they roam the world together, and together they have haunted readers' imaginations for nearly four hundred years.",
+      "description": "Don Quixote has become so entranced by reading chivalric romances that he determines to become a knight-errant himself. In the company of his faithful squire, Sancho Panza, his exploits blossom in all sorts of wonderful ways. While Quixote's fancy often leads him astray—he tilts at windmills, imagining them to be giants—Sancho acquires cunning and a certain sagacity.",
       "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546112331i/3836.jpg",
       "language": "Spanish",
       "link": "https://en.wikipedia.org/wiki/Don_Quixote\n",
@@ -309,7 +309,7 @@
     {
       "author": "Fyodor Dostoevsky",
       "country": "Russia",
-      "description": "The Brothers Karamazov is a murder mystery, a courtroom drama, and an exploration of erotic rivalry in a series of triangular love affairs involving the “wicked and sentimental” Fyodor Pavlovich Karamazov and his three sons―the impulsive and sensual Dmitri; the coldly rational Ivan; and the healthy, red-cheeked young novice Alyosha. Through the gripping events of their story, Dostoevsky portrays the whole of Russian life, is social and spiritual striving, in what was both the golden age and a tragic turning point in Russian culture.",
+      "description": "The Brothers Karamazov is a murder mystery, a courtroom drama, and an exploration of erotic rivalry in a series of triangular love affairs involving the “wicked and sentimental” Fyodor Pavlovich Karamazov and his three sons―the impulsive and sensual Dmitri; the coldly rational Ivan; and the healthy, red-cheeked young novice Alyosha. ",
       "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1427728126i/4934.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/The_Brothers_Karamazov\n",
@@ -320,7 +320,7 @@
     {
       "author": "George Eliot",
       "country": "United Kingdom",
-      "description": "George Eliot's most ambitious novel is a masterly evocation of diverse lives and changing fortunes in a provincial community. Peopling its landscape are Dorothea Brooke, a young idealist whose search for intellectual fulfillment leads her into a disastrous marriage to the pedantic scholar Casaubon; the charming but tactless Dr Lydgate, whose pioneering medical methods, combined with an imprudent marriage to the spendthrift beauty Rosamond, threaten to undermine his career; and the religious hypocrite Bulstrode, hiding scandalous crimes from his past. As their stories interweave, George Eliot creates a richly nuanced and moving drama, hailed by Virginia Woolf as 'one of the few English novels written for grown-up people.'",
+      "description": "George Eliot's most ambitious novel is a masterly evocation of diverse lives and changing fortunes in a provincial community. Peopling its landscape are Dorothea Brooke, a young idealist; the charming but tactless Dr Lydgate,the spendthrift beauty Rosamond, and the religious hypocrite Bulstrode, hiding scandalous crimes from his past.",
       "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1568307771i/19089.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Middlemarch\n",
@@ -925,7 +925,7 @@
     {
       "author": "William Shakespeare",
       "country": "England",
-      "description": "The play tells us about families struggling between greed and cruelty, on the one hand, and support and consolation, on the other. Emotions are extreme, magnified to gigantic proportions. We also see old age portrayed in all its vulnerability, pride, and, perhaps, wisdom—one reason this most devastating of Shakespeare’s tragedies is also perhaps his most moving.",
+      "description": "The play tells us about families struggling between greed and cruelty, on the one hand, and support and consolation, on the other. Emotions are extreme, magnified to gigantic proportions... One reason this most devastating of Shakespeare's tragedies is also perhaps his most moving.",
       "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1331563731i/12938.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/King_Lear\n",
@@ -947,7 +947,7 @@
     {
       "author": "Sophocles",
       "country": "Greece",
-      "description": "To Laius, King of Thebes, an oracle foretold that the child born to him by his queen Jocasta would slay his father and wed his mother. So when in time a son was born the infant's feet were riveted together and he was left to die on Mount Cithaeron. But a shepherd found the babe and tended him, and delivered him to another shepherd who took him to his master, the King of Corinth.",
+      "description": "To Laius, King of Thebes, an oracle foretold that the child born to him by his queen Jocasta would slay his father and wed his mother. So when in time a son was born the infant's feet were riveted together and he was left to die on Mount Cithaeron.",
       "imageLink": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1349031073i/34439.jpg",
       "language": "Greek",
       "link": "https://en.wikipedia.org/wiki/Oedipus_the_King\n",
