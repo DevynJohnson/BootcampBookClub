@@ -47,6 +47,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             searchResults.appendChild(bookCard);
         });
     }
+
+    // Create a button to hide the search results
+    const hideButton = document.createElement('button');
+    hideButton.classList.add('btn', 'btn-primary', 'mt-3');
+    hideButton.textContent = 'Hide Results';
+    hideButton.addEventListener('click', () => {
+        searchResults.innerHTML = '';
+    });
+    // Append the hide button to search result container
+    searchResults.appendChild(hideButton);
     
     const completeBookModal = document.getElementById('completeBookModal');
     let bsCompleteBookModal;
