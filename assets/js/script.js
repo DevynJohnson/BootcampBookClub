@@ -18,10 +18,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const query = event.target.querySelector('input[type="search"]').value.toLowerCase();
+        
+        // Check if the search query is empty
+        if (query === '') {
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = '<p class="text-center">Please enter a search term.</p>';
+            return;
+        };
         const results = books.filter(book => book.title.toLowerCase().includes(query));
         displaySearchResults(results);
     });
-
+        
     // Function to display search results
     function displaySearchResults(results) {
         const searchResults = document.getElementById('searchResults');
