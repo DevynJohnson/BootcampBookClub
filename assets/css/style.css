@@ -121,7 +121,7 @@ aside {
 }
 
 section {
-    max-height: 80vh;
+    height: 80vh;
 }
 
 #asideImage {
