@@ -1,16 +1,17 @@
 # Bootcamp Bookclub
 
 ## Installation
-No installation required, application will run in web browser.
+No installation required, application is designed to run in web browser.
 
 ## Usage
-User can utilize application to track their personal reading goals, get book recommendations from a list of 100 books, and rate books they have read. This information will be stored in the local storage of the web broswer.
+An application inspired by Goodreads, Bootcamp Book Club is a fun way for users to set and track their personal reading goals. Starting with a database of 100 classic novels and stories from authors around the world, users are shown a random book when the page loads that can be added to the user’s personal reading list that can be marked as completed when finished. If there are books outside of that list, the user is able to add their own books to the database and enter information such as title, author, publication year, a link to the cover art to be displayed and more.
+
 
 ## Contributors
-Albert Delgado
-Alexander Shegstad - <a href="https://github.com/AMShegstad">Github</a> | <a href="https://www.linkedin.com/in/alexander-shegstad/ ">LinkedIn</a>
-Devyn Johnson - <a href="https://www.github.com/devynjohnson">Github</a> | <a href="https://www.linkedin.com/in/devyn-johnson-a5259213b">LinkedIn</a>
-Joe Vargas
+<p>Albert Delgado - <a href="https://github.com/Bert0424">Github</a></p>
+<p>Alexander Shegstad - <a href="https://github.com/AMShegstad">Github</a> | <a href="https://www.linkedin.com/in/alexander-shegstad/ ">LinkedIn</a></p>
+<p>Devyn Johnson - <a href="https://www.github.com/devynjohnson">Github</a> | <a href="https://www.linkedin.com/in/devyn-johnson-a5259213b">LinkedIn</a></p>
+<p>Joe Vargas - <a href="https://github.com/minastyr">Github</a></p>
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
