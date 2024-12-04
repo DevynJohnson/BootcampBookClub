@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
      const userData = JSON.parse(localStorage.getItem('userData'));
      if (userData) {
          const welcomeMessageElement = document.getElementById('welcomeMessage');
-         welcomeMessageElement.textContent = `Welcome back ${userData.username}! Use the search bar above to look for a book title or add one of your own to manage your reading list!`;
+         welcomeMessageElement.textContent = `Welcome back ${userData.username}! Use the search bar above to look for a book title or add one of your own to manage your reading list!`; // Display a welcome message with username if there is user data in local storage
+         getBookGoal(); // Display the user's reading goal that is stored in local storage
+         populateBooksLeft(); // Display the number of books left to read in navbar when screen is less than 992px
      }
  
     // Handle the search form submission
@@ -556,7 +558,7 @@ function setStyles() {
 function getBookGoal() {
     const totalBookGoal = document.getElementById('bookGoal');
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
-    // totalBookGoal.textContent = storedUserData.readingGoal;
+    totalBookGoal.textContent = storedUserData.readingGoal;
     if (user && user.readingGoal) {
         totalBookGoal.textContent = `Your reading goal is ${storedUserData.readingGoal} books!`;
     } else {
@@ -568,13 +570,16 @@ function getBookGoal() {
 };
 
 function populateBooksLeft() {
-    let booksLeft = document.getElementById('navBarBookCount');
-    let userData = JSON.parse(localStorage.getItem('userData'));
-    let goal = userData.readingGoal;
-    let soFar = 25;
-    let name = userData.username;
-    booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
-}
+    const booksLeft = document.getElementById('navBarBookCount');
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+        const goal = userData.readingGoal;
+        const soFar = completedBooks.length;
+        const name = userData.username;
+        booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
+} else {
+    booksLeft.textContent = 'Please sign up to set your reading goal!';
+};
 
 function currentBook() {
 
