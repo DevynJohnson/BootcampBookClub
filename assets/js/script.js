@@ -1,8 +1,18 @@
 
+
 document.addEventListener('DOMContentLoaded', (event) => {
     //search form feature moved inside the beginning of the dom for funtionality.
     const books = bookData;
 
+     // Check if user data is found in local storage and update the welcome message
+     const userData = JSON.parse(localStorage.getItem('userData'));
+     if (userData) {
+         const welcomeMessageElement = document.getElementById('welcomeMessage');
+         welcomeMessageElement.textContent = `Welcome back ${userData.username}! Use the search bar above to look for a book title or add one of your own to manage your reading list!`; // Display a welcome message with username if there is user data in local storage
+         getBookGoal(); // Display the user's reading goal that is stored in local storage
+         populateBooksLeft(); // Display the number of books left to read in navbar when screen is less than 992px
+     }
+ 
     // Handle the search form submission
     const searchForm = document.getElementById('searchBooks');
     searchForm.addEventListener('submit', (event) => {
@@ -299,6 +309,7 @@ Let me know if you have any issues!
 
 for (let k=0; k < bookData.length; k++){
     console.log(bookData[k].title);
+
 }
 
 // Registration form code
@@ -455,111 +466,40 @@ function getRandomBook() {
     randBookAuthor.textContent = storedBooks[randomNumber].author;
     randBookDescription.textContent = storedBooks[randomNumber].description;
     randBookImage.setAttribute('src', storedBooks[randomNumber].imageLink);
-  }
-
-// Creating a list of styles to choose from.
-function setStyles() {
-    const styleList = []
-
-    const style1 = {
-        primary: '#EEEEEE',
-        secondary: '#686D76',
-        tertiary: '#373A40',
-        accent: '#DC5F00'
-    }
-    styleList.push(style1);
-
-    const style2 = {
-        primary: '#F5F7F8',
-        secondary: '#F4CE14',
-        tertiary: '#495E57',
-        accent: '#45474B'
-    }
-    styleList.push(style2);
-
-    const style3 = {
-        primary: '#384B70',
-        secondary: '#507687',
-        tertiary: '#FCFAEE',
-        accent: '#B8001F'
-    }
-    styleList.push(style3);
-
-    const style4 = {
-        primary: '#F3EFE0',
-        secondary: '#434242',
-        tertiary: '#222222',
-        accent: '#22A39F'
-    }
-    styleList.push(style4);
-
-    const style5 = {
-        primary: '#E4E0E1',
-        secondary: '#D6C0B3',
-        tertiary: '#AB886D',
-        accent: '#493628'
-    }
-    styleList.push(style5);
-
-    const style6 = {
-        primary: '#884A39',
-        secondary: '#C38154',
-        tertiary: '#FFC26F',
-        accent: '#F9E0BB'
-    }
-    styleList.push(style6);
-
-    const style7 = {
-        primary: '#43766C',
-        secondary: '#F8FAE5',
-        tertiary: '#B19470',
-        accent: '#76453B'
-    }
-    styleList.push(style7);
-
-    const style8 = {
-        primary: '#000B58',
-        secondary: '#003161',
-        tertiary: '#006A67',
-        accent: '#FFF4B7'
-    }
-    styleList.push(style8);
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const colorSelect = document.getElementById('colorSelect');
-
-        // load saved color
-        const savedStyles = JSON.parse(localStorage.getItem('savedStyles'));
-        if (savedStyles) {
-            document.body.style.backgroundColor = savedStyles.primary;
-        }
-
-        colorSelect.addEventListener('change', (event) => {
-            const selectedStyle = event.target.value;
-            document.body.style.backgroundColor = styleList[selectedStyle].primary;
-
-            // save selected color;
-            localStorage.setItem('savedStyles', JSON.stringify(savedStyles[selectedStyle].primary));
-        })
-    });
 }
 
 function getBookGoal() {
     const totalBookGoal = document.getElementById('bookGoal');
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
     totalBookGoal.textContent = storedUserData.readingGoal;
+    if (storedUserData.readingGoal) {
+        totalBookGoal.textContent = `Your reading goal is ${storedUserData.readingGoal} books!`;
+    } else {
+        totalBookGoal.textContent = 'Please sign up to set your reading goal!';
+    }
+
 
     console.log(totalBookGoal.textContent);
 };
 
 function populateBooksLeft() {
-    let booksLeft = document.getElementById('navBarBookCount');
-    let userData = JSON.parse(localStorage.getItem('userData'));
-    let goal = userData.readingGoal;
-    let soFar = 25;
-    let name = userData.username;
-    booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
-}
+    const booksLeft = document.getElementById('navBarBookCount');
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    const completedBooks = JSON.parse(localStorage.getItem('completedBooks')) || [];
+    const goal = userData.readingGoal
+
+    if (userData) {
+        const soFar = completedBooks.length;
+        const name = userData.username;
+        if (soFar === 0) {
+            booksLeft.textContent = `You haven't completed any books yet, ${name}!`;
+        } else {
+            booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
+        }
+    } else {
+        booksLeft.textContent = 'Please sign up to set a goal and track your progess!';
+    }
+};
 
 function currentBook() {
 
@@ -570,8 +510,3 @@ function markBookComplete() {
 }
 
 getRandomBook();
-checkForData();
-populateBooksLeft();
-getBookGoal();
-setStyles();
-
