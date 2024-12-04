@@ -210,6 +210,30 @@
                     </div>
                 </div>
 
+                <div class="modal fade" id="completeBookModal" tabindex="-1" aria-labelledby="completeBookModalLabel"
+                aria-hidden="true" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="completeBookModalLabel">Complete A Book</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="completeForm">
+                                <div class="mb-3">
+                                    <label for="bookToComplete" class="form-label">Select Book to Complete</label>
+                                    <select class="form-select" id="bookToComplete" required>
+                                        <!-- Options will be dynamically added here -->
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Mark as Completed</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+
 
                 <section id="centerRegion" class="overflow-auto">
                     <div class="d-flex flex-row flex-fill justify-content-center max-vh-80 overflow-auto">
@@ -311,6 +335,9 @@
                             <button type="button" class="btn btn-outline-success btn-lg my-3" data-bs-toggle="modal"
                                 data-bs-target="#bookFormModal">Add a New Book!</button>
                             <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookFormModal"> Add Book </button> -->
+                            <button type="button" class="btn btn-outline-success btn-lg mx-auto mt-2"
+                            data-bs-toggle="modal" data-bs-target="#completeBookModal"
+                            id="completeBookButton">Complete A Book!</button>
                         </div>
                     </h4>
 

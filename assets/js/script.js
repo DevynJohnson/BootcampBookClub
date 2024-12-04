@@ -514,6 +514,10 @@ function populateBooksLeft() {
     }
 };
 
+function toBeReadList() {
+    
+}
+
 function currentBook() {
 
 }
