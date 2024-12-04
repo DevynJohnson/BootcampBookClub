@@ -472,7 +472,7 @@ function getBookGoal() {
     const totalBookGoal = document.getElementById('bookGoal');
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
     totalBookGoal.textContent = storedUserData.readingGoal;
-    if (user && user.readingGoal) {
+    if (storedUserData.readingGoal) {
         totalBookGoal.textContent = `Your reading goal is ${storedUserData.readingGoal} books!`;
     } else {
         totalBookGoal.textContent = 'Please sign up to set your reading goal!';
@@ -485,13 +485,20 @@ function getBookGoal() {
 function populateBooksLeft() {
     const booksLeft = document.getElementById('navBarBookCount');
     const userData = JSON.parse(localStorage.getItem('userData'));
+    const completedBooks = JSON.parse(localStorage.getItem('completedBooks')) || [];
+    const goal = userData.readingGoal
+
     if (userData) {
-        const goal = userData.readingGoal;
         const soFar = completedBooks.length;
         const name = userData.username;
-        booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
-} else {
-    booksLeft.textContent = 'Please sign up to set your reading goal!';
+        if (soFar === 0) {
+            booksLeft.textContent = `You haven't completed any books yet, ${name}!`;
+        } else {
+            booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
+        }
+    } else {
+        booksLeft.textContent = 'Please sign up to set a goal and track your progess!';
+    }
 };
 
 function currentBook() {
@@ -503,7 +510,3 @@ function markBookComplete() {
 }
 
 getRandomBook();
-checkForData();
-populateBooksLeft();
-getBookGoal();
-setStyles();
