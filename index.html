@@ -47,7 +47,7 @@
             </div>
         </nav>
 
-        <div class="container mt-5">
+          <div class="container mt-5">
             <div id="searchResults" class="row"></div>
         </div>
 
@@ -62,19 +62,22 @@
 
                         <div class="p-4 flex-wrap col-md-5">
 
+    
                             <h3 class="card bg-secondary">
                                 <div class="card-title">
-                                    <p class=" responsive-text text-center text-white" id="welcomeMessage">Welcome!
-                                        Please login or sign up to get started!</p>
+                                    <p class=" responsive-text text-center text-white" id="welcomeMessage">Welcome! Please login or sign up to get started!</p>
+
                                 </div>
                             </h3>
 
                             <div class="text-center p-5">
+
                                 <div>
                                     <button type="button" class="btn btn-outline-success btn-lg mx-auto"
                                         data-bs-toggle="modal" data-bs-target="#loginFormModal">Login</button>
                                     <button type="button" class="btn btn-outline-success btn-lg mx-auto"
                                         data-bs-toggle="modal" data-bs-target="#registrationFormModal">Sign Up!</button>
+
                                 </div>
                                 <div class="modal fade" id="loginFormModal" tabindex="-1"
                                     aria-labelledby="loginFormModalLabel" aria-hidden="true">
@@ -85,7 +88,8 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
+
+                                         <!--   <div class="modal-body">
                                                 <div class="card border-primary text-center">
                                                     <h3>Welcome back! Login here.</h3>
                                                     <form id="login-form" class="col-auto">
@@ -93,7 +97,27 @@
                                                             <span class="input-group-text" for="username"
                                                                 id="basic-addon1">Username:</span>
                                                             <input type="text" class="form-control" id="username"
-                                                                placeholder="Enter username" required>
+                                                                placeholder="Enter username" required>-->
+
+                                        </div>
+                                    </div>
+                                    
+                                
+
+                                    <div class="modal fade" id="registrationFormModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true"> 
+                                        <div class="modal-dialog"> 
+                                            <div class="modal-content"> 
+                                                <div class="modal-header"> 
+                                                    <h5 class="modal-title" id="registrationFormModalTitle"> Register </h5> 
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                                                </div> 
+                                                <div class="modal-body"> 
+                                                    <h3>New to the site? Sign up here!</h3>
+                                                    <form id="register-form" class="col-auto">
+                                                        <div class="input-group mb-2">
+                                                            <span class="input-group-text" for="newUsername" id="basic-addon1">Create Username: </span>
+                                                            <input type="text" class="form-control" id="newUsername" placeholder="username" required>
+
                                                         </div>
                                                         <div class="input-group mb-2 mt-2">
                                                             <span class="input-group-text" for="password"
@@ -101,7 +125,14 @@
                                                             <input type="password" class="form-control" id="password"
                                                                 placeholder="Enter password" required>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary">Login</button>
+
+                                                        <div class="input-group mb-2 mt-2">
+                                                            <span class="input-group-text" for="newReadingGoal" id="basic-addon1">Set Reading Goal:</span>
+                                                            <input type="text" class="form-control" id="newReadingGoal" placeholder="total books this year"
+                                                                required>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Sign Up</button>
+
                                                     </form>
                                                     <div id="loginSuccess" class="alert alert-success" role="alert"
                                                         style="display: none;"></div>
@@ -234,6 +265,7 @@
                 </section>
             </div>
 
+
             <aside class="col-sm-3 px-3 my-auto border border-dark">
                 <asideTop class="bg-dark">
                     <h4 class="card bg-secondary">
@@ -243,6 +275,7 @@
                         </div>
                     </h4>
 
+
                     <div class="card-title bg-dark container" id="currentBook">
                         <center bs-data-theme="dark" class="bg-dark mx-0 my-0">
                             <h3 class="text-light"> Currently Reading: </h3>
@@ -251,6 +284,7 @@
                         </center>
                     </div>
                 </asideTop>
+
 
                 <asideMiddle class="p-2">
                     <h4 class="card">
@@ -265,55 +299,57 @@
                         </div>
                     </h4>
 
+
         </centerSection>
 
         <footer>
         </footer>
 
-        <div class="modal fade" id="bookFormModal" tabindex="-1" aria-labelledby="bookFormModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="bookFormModalLabel">Add a New Book</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="bookForm">
-                            <div class="mb-3">
-                                <label for="newBookTitle" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="newBookTitle" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="newBookAuthor" class="form-label">Author</label>
-                                <input type="text" class="form-control" id="newBookAuthor" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="newBookCountry" class="form-label">Country of Origin</label>
-                                <input type="text" class="form-control" id="newBookCountry" required>
-                            </div>
+
+        <div class="modal fade" id="bookFormModal" tabindex="-1" aria-labelledby="bookFormModalLabel" aria-hidden="true"> 
+            <div class="modal-dialog"> 
+                <div class="modal-content"> 
+                    <div class="modal-header"> 
+                        <h5 class="modal-title" id="bookFormModalLabel">Add a New Book</h5> 
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                    </div> 
+                    <div class="modal-body"> 
+                        <form id="bookForm"> 
+                            <div class="mb-3"> 
+                                <label for="newBookTitle" class="form-label">Title</label> 
+                                <input type="text" class="form-control" id="newBookTitle" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookAuthor" class="form-label">Author</label> 
+                                <input type="text" class="form-control" id="newBookAuthor" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookCountry" class="form-label">Country of Origin</label> 
+                                <input type="text" class="form-control" id="newBookCountry" required> 
+                            </div> 
                             <div>
                                 <label for="newBookLanguage" class="form-label">Language</label>
                                 <input type="text" class="form-control" id="newBookLanguage" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="newBookYear" class="form-label">Year of Publication</label>
-                                <input type="number" class="form-control" id="newBookYear" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="newBookImage" class="form-label">Image URL</label>
-                                <input type="url" class="form-control" id="newBookImage" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="newBookLink" class="form-label">Link</label>
-                                <input type="url" class="form-control" id="newBookLink" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="newBookPages" class="form-label">Number of Pages</label>
-                                <input type="number" class="form-control" id="newBookPages" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </form>
+                            <div class="mb-3"> 
+                                <label for="newBookYear" class="form-label">Year of Publication</label> 
+                                <input type="number" class="form-control" id="newBookYear" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookImage" class="form-label">Image URL</label> 
+                                <input type="url" class="form-control" id="newBookImage" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookLink" class="form-label">Link</label> 
+                                <input type="url" class="form-control" id="newBookLink" required> 
+                            </div> 
+                            <div class="mb-3"> 
+                                <label for="newBookPages" class="form-label">Number of Pages</label> 
+                                <input type="number" class="form-control" id="newBookPages" required> 
+                            </div> 
+                            <button type="submit" class="btn btn-primary">Save</button> 
+                        </form> 
+
                     </div>
                 </div>
             </div>
