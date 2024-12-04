@@ -1,8 +1,18 @@
 
+
 document.addEventListener('DOMContentLoaded', (event) => {
     //search form feature moved inside the beginning of the dom for funtionality.
     const books = bookData;
 
+     // Check if user data is found in local storage and update the welcome message
+     const userData = JSON.parse(localStorage.getItem('userData'));
+     if (userData) {
+         const welcomeMessageElement = document.getElementById('welcomeMessage');
+         welcomeMessageElement.textContent = `Welcome back ${userData.username}! Use the search bar above to look for a book title or add one of your own to manage your reading list!`; // Display a welcome message with username if there is user data in local storage
+         getBookGoal(); // Display the user's reading goal that is stored in local storage
+         populateBooksLeft(); // Display the number of books left to read in navbar when screen is less than 992px
+     }
+ 
     // Handle the search form submission
     const searchForm = document.getElementById('searchBooks');
     searchForm.addEventListener('submit', (event) => {
@@ -299,6 +309,7 @@ Let me know if you have any issues!
 
 for (let k=0; k < bookData.length; k++){
     console.log(bookData[k].title);
+
 }
 
 // Registration form code
@@ -461,18 +472,34 @@ function getBookGoal() {
     const totalBookGoal = document.getElementById('bookGoal');
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
     totalBookGoal.textContent = storedUserData.readingGoal;
+    if (storedUserData.readingGoal) {
+        totalBookGoal.textContent = `Your reading goal is ${storedUserData.readingGoal} books!`;
+    } else {
+        totalBookGoal.textContent = 'Please sign up to set your reading goal!';
+    }
+
 
     console.log(totalBookGoal.textContent);
 };
 
 function populateBooksLeft() {
-    let booksLeft = document.getElementById('navBarBookCount');
-    let userData = JSON.parse(localStorage.getItem('userData'));
-    let goal = userData.readingGoal;
-    let soFar = 25;
-    let name = userData.username;
-    booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
-}
+    const booksLeft = document.getElementById('navBarBookCount');
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    const completedBooks = JSON.parse(localStorage.getItem('completedBooks')) || [];
+    const goal = userData.readingGoal
+
+    if (userData) {
+        const soFar = completedBooks.length;
+        const name = userData.username;
+        if (soFar === 0) {
+            booksLeft.textContent = `You haven't completed any books yet, ${name}!`;
+        } else {
+            booksLeft.textContent = `Books left: ${soFar}/${goal}, ${name}!`;
+        }
+    } else {
+        booksLeft.textContent = 'Please sign up to set a goal and track your progess!';
+    }
+};
 
 function currentBook() {
 
@@ -483,8 +510,3 @@ function markBookComplete() {
 }
 
 getRandomBook();
-checkForData();
-populateBooksLeft();
-getBookGoal();
-setStyles();
-

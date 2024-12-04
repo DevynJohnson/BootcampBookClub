@@ -57,28 +57,16 @@
                         </imgBox> 
 
                         <div class="p-4 flex-wrap col-md-5">
-
-                            <h2 class="card bg-dark">
-                                <div class="card-title">
-                                    <p class="responsive-text m-3 text-center text-white">BootCamp Book Club</p>
-                                </div>
-                            </h2> 
     
                             <h3 class="card bg-secondary">
                                 <div class="card-title">
-                                    <p class=" responsive-text text-center text-white">Hello XXXX!</p>
-                                </div>
-                            </h3>
-
-                            <h3 class="card bg-secondary">
-                                <div class="card-title">
-                                    <p class=" responsive-text m-2 text-center text-white">Welcome to the Club!</p>
+                                    <p class=" responsive-text text-center text-white" id="welcomeMessage">Welcome! Please login or sign up to get started!</p>
                                 </div>
                             </h3>
 
                             <div class="text-center p-5">
                                 <div class="animatedButtons">
-                                    <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#loginFormModal">Logon</button>
+                                    <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#loginFormModal">Login</button>
                                     <button type="button" class="btn btn-outline-success btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#registrationFormModal">Sign Up!</button>
                                 </div>
                                     <div class="modal fade" id="loginFormModal" tabindex="-1" aria-labelledby="loginFormModalLabel" aria-hidden="true"> 
@@ -120,7 +108,7 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
                                                 </div> 
                                                 <div class="modal-body"> 
-                                                    <h3>New to the site? Register here!</h3>
+                                                    <h3>New to the site? Sign up here!</h3>
                                                     <form id="register-form" class="col-auto">
                                                         <div class="input-group mb-2">
                                                             <span class="input-group-text" for="newUsername" id="basic-addon1">Create Username: </span>
@@ -135,7 +123,7 @@
                                                             <input type="text" class="form-control" id="newReadingGoal" placeholder="total books this year"
                                                                 required>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary">Register</button>
+                                                        <button type="submit" class="btn btn-primary">Sign Up</button>
                                                     </form>
                                                 </div>
                                                 <div id="registeredSuccessfully" class="alert alert-success" role="alert" style="display: none;">
@@ -223,7 +211,7 @@
                 <h4 class="card bg-secondary">
                     <div class="card-title">
                         <p class="m-2 text-center bg-dark text-white">Book Goal:</p>
-                      <h2 class="card bg-secondary text-center p-4" id="bookGoal"></h2>
+                      <h2 class="card bg-secondary text-center text-white p-4" id="bookGoal"></h2>
                     </div>
                 </h4>
             
