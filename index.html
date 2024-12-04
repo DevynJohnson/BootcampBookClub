@@ -30,18 +30,17 @@
                             data-bs-target="#loginFormModal">Login</a>
                         <a class="nav-item nav-link" href="#" data-bs-toggle="modal"
                             data-bs-target="#registrationFormModal">Sign Up</a>
-                        <a class="nav-item nav-link" href="#">Currently Reading</a>
-                        <a class="nav-item nav-link" href="#">To Be Read</a>
+                        <a class="nav-item nav-link" href="#centerRegion">Random Book</a>
                         <a class="nav-item nav-link" href="#completedBooks">Completed Books</a>
                         <a class="nav-item nav-link" href="#" data-bs-toggle="modal" data-bs-target="#bookFormModal">Add
                             A Book</a>
                         <form class="form-inline d-flex" id="searchBooks">
                             <input class="form-control mr-sm-1" type="search" placeholder="Search Books By Title"
                                 aria-label="Search" />
-                        </form>
-                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-                            Search
-                        </button>
+                                <button class="btn btn-outline-light my-2 my-sm-0" type="submit" >
+                                    Search
+                                </button>
+                            </form>
                     </div>
                 </div>
             </div>
@@ -161,7 +160,55 @@
 
                     </div>
                 </div>
-
+                
+                <div class="modal fade" id="bookFormModal" tabindex="-1" aria-labelledby="bookFormModalLabel" aria-hidden="true"> 
+                    <div class="modal-dialog"> 
+                        <div class="modal-content"> 
+                            <div class="modal-header"> 
+                                <h5 class="modal-title" id="bookFormModalLabel">Add a New Book</h5> 
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                            </div> 
+                            <div class="modal-body"> 
+                                <form id="bookForm"> 
+                                    <div class="mb-3"> 
+                                        <label for="newBookTitle" class="form-label">Title</label> 
+                                        <input type="text" class="form-control" id="newBookTitle" required> 
+                                    </div> 
+                                    <div class="mb-3"> 
+                                        <label for="newBookAuthor" class="form-label">Author</label> 
+                                        <input type="text" class="form-control" id="newBookAuthor" required> 
+                                    </div> 
+                                    <div class="mb-3"> 
+                                        <label for="newBookCountry" class="form-label">Country of Origin</label> 
+                                        <input type="text" class="form-control" id="newBookCountry" required> 
+                                    </div> 
+                                    <div>
+                                        <label for="newBookLanguage" class="form-label">Language</label>
+                                        <input type="text" class="form-control" id="newBookLanguage" required>
+                                    </div>
+                                    <div class="mb-3"> 
+                                        <label for="newBookYear" class="form-label">Year of Publication</label> 
+                                        <input type="number" class="form-control" id="newBookYear" required> 
+                                    </div> 
+                                    <div class="mb-3"> 
+                                        <label for="newBookImage" class="form-label">Image URL</label> 
+                                        <input type="url" class="form-control" id="newBookImage" required> 
+                                    </div> 
+                                    <div class="mb-3"> 
+                                        <label for="newBookLink" class="form-label">Link</label> 
+                                        <input type="url" class="form-control" id="newBookLink" required> 
+                                    </div> 
+                                    <div class="mb-3"> 
+                                        <label for="newBookPages" class="form-label">Number of Pages</label> 
+                                        <input type="number" class="form-control" id="newBookPages" required> 
+                                    </div> 
+                                    <button type="submit" class="btn btn-primary">Save</button> 
+                                </form> 
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                 <section id="centerRegion" class="overflow-auto">
@@ -274,54 +321,7 @@
         </footer>
 
 
-        <div class="modal fade" id="bookFormModal" tabindex="-1" aria-labelledby="bookFormModalLabel" aria-hidden="true"> 
-            <div class="modal-dialog"> 
-                <div class="modal-content"> 
-                    <div class="modal-header"> 
-                        <h5 class="modal-title" id="bookFormModalLabel">Add a New Book</h5> 
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
-                    </div> 
-                    <div class="modal-body"> 
-                        <form id="bookForm"> 
-                            <div class="mb-3"> 
-                                <label for="newBookTitle" class="form-label">Title</label> 
-                                <input type="text" class="form-control" id="newBookTitle" required> 
-                            </div> 
-                            <div class="mb-3"> 
-                                <label for="newBookAuthor" class="form-label">Author</label> 
-                                <input type="text" class="form-control" id="newBookAuthor" required> 
-                            </div> 
-                            <div class="mb-3"> 
-                                <label for="newBookCountry" class="form-label">Country of Origin</label> 
-                                <input type="text" class="form-control" id="newBookCountry" required> 
-                            </div> 
-                            <div>
-                                <label for="newBookLanguage" class="form-label">Language</label>
-                                <input type="text" class="form-control" id="newBookLanguage" required>
-                            </div>
-                            <div class="mb-3"> 
-                                <label for="newBookYear" class="form-label">Year of Publication</label> 
-                                <input type="number" class="form-control" id="newBookYear" required> 
-                            </div> 
-                            <div class="mb-3"> 
-                                <label for="newBookImage" class="form-label">Image URL</label> 
-                                <input type="url" class="form-control" id="newBookImage" required> 
-                            </div> 
-                            <div class="mb-3"> 
-                                <label for="newBookLink" class="form-label">Link</label> 
-                                <input type="url" class="form-control" id="newBookLink" required> 
-                            </div> 
-                            <div class="mb-3"> 
-                                <label for="newBookPages" class="form-label">Number of Pages</label> 
-                                <input type="number" class="form-control" id="newBookPages" required> 
-                            </div> 
-                            <button type="submit" class="btn btn-primary">Save</button> 
-                        </form> 
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </main>
 </body>
 
